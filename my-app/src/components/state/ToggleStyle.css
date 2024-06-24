@@ -1,0 +1,33 @@
+
+.toggle{
+    width: 90px; /* viết tắt w100*/
+    height: 40px; /* viết tắt h40*/
+    background-color: #ccc;
+    padding: 5px; /* viết tắt p5*/
+    border-radius: 100rem; 
+    margin: 25px; /* viết tắt m25*/
+    cursor: pointer;
+    transition: all 0.2s linear;
+ }
+ .spinner{
+    width: 40px; /* viết tắt w40*/
+    height: 40px; /* viết tắt h40*/
+    background-color: #fff;
+    border-radius: 100rem;
+    transition: all 0.2s linear;
+ }
+ .toggle-active{
+    background-color: #007bff;
+ }
+ .spinner-active{
+    transform: translateX(50px); /*height 100px - 10px -40px*/
+ }
+ .toggle-control{
+    display: flex;
+    margin: 0 25px;
+    align-items: center;
+    gap: 0 10px;
+ }
+ .toggle-control > *{
+    cursor: pointer;
+ }
