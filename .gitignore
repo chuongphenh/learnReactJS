@@ -1,0 +1,18 @@
+# Thư mục node_modules
+node_modules/
+
+# Tệp log
+*.log
+
+# Thư mục build
+/build
+
+# Tệp .env chứa các biến môi trường
+.env
+
+# Thư mục và tệp tạm thời
+temp/
+*.tmp
+
+# Thư mục dist có thể được tạo bởi các công cụ build
+dist/
