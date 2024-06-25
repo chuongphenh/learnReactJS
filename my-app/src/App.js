@@ -3,6 +3,8 @@ import "./App.css";
 import YoutubeList from "./components/Youtube/YoutubeList";
 import { Children } from "react";
 import Toggle from "./components/state/Toggle";
+import Counter from "./components/state/Counter";
+import Game from "./components/tictactoe/Game";
 
 //JSX: JavaScript XML
 //ES6: EcmaScript 6
@@ -70,7 +72,11 @@ function App() {
       {/* </YoutubeList> */}
 
       {/* state */}
-      <Toggle></Toggle>
+      {/* <Toggle></Toggle>
+      <Counter></Counter> */}
+
+      {/* Game */}
+      <Game></Game> 
     </div>
   );
 }

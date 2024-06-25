@@ -21,6 +21,16 @@ function Toggle() {
   // [count, setCount] = useState(0);
   // state changes -> re-render component
   const handleToggle = () => {
+    /***
+     * setIsToggle(callback): callback chính là function ;
+     * <==> setIsToggle(prevState => !prevState) // trên 1 dòng thì viết như này
+     * <==> setIsToggle(prevState => {!prevState}) // nhiều chức năng thì sử dụng {}
+     * setIsToggle((isToggle) => !isToggle)
+     * setIsToggle((isToggle) => {
+     *    console.log(isToggle);
+     *     return !isToggle;
+     * })
+    */
     setIsToggle(!isToggle);
   };
   return (
