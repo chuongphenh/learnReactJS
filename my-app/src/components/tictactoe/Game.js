@@ -51,11 +51,28 @@ const initialState = {
   xIsNext: true,
 };
 
+// immutable : không thể chỉnh sửa trực tiếp giá trị của state
+// muốn chỉnh sửa thì phải tạo ra 1 bản copy của state
+// sử dụng spread operator để tạo ra bản copy của state nhưng có một vấn đề đó chính là nếu state có nhiều phần tử thì việc copy sẽ rất phức tạp và không copy được hết
+//=> sử dụng deep copy Json.parse(Json.stringify(obj))
 const gameReducer = (state, action) => {
   switch (action.type) {
-    case "CLICK":
-      break;
+    case "CLICK": {
+      const { board, xIsNext } = state;
+      const { index, winner } = action.payload;
+      if (winner || board[index]) return state;
+      const nextState = JSON.parse(JSON.stringify(state));
+      nextState.board[index] = xIsNext ? "X" : "O";
+      nextState.xIsNext = !state.xIsNext;
+      return nextState;
+    }
+    case "RESTART": {
+      const nextState = JSON.parse(JSON.stringify(state));
+      nextState.board = Array(9).fill(null);
+      nextState.xIsNext = true;
 
+      return nextState;
+    }
     default:
       break;
   }
@@ -66,14 +83,19 @@ const Game = () => {
 
   const winner = calculateWinner(state.board);
   const handleClick = (index) => {
-    // const boardCopy = [...state.board];
-    // if (winner || boardCopy[index]) return;
     dispatch({
       type: "CLICK",
-      payload: { index },
-    }); // có thể viết index = index nhưng  vì trùng với tên nên viết index
+      payload: {
+        index,
+        winner,
+      },
+    });
   };
-  const handleRestart = () => {};
+  const handleRestart = () => {
+    dispatch({
+      type: "RESTART",
+    });
+  };
   return (
     <div className="game">
       <Board cells={state.board} onClick={handleClick}></Board>

@@ -1,11 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
-import YoutubeList from "./components/Youtube/YoutubeList";
-import { Children } from "react";
-import Toggle from "./components/state/Toggle";
-import Counter from "./components/state/Counter";
-import Game from "./components/tictactoe/Game";
-
+import Photos from "./components/photo/Photos";
 //JSX: JavaScript XML
 //ES6: EcmaScript 6
 //curly braces {} : JavaScript expression
@@ -18,7 +12,7 @@ import Game from "./components/tictactoe/Game";
  * props : className, id, src, alt, href, style, onClick, onChange, onSubmit, onHover, onMouseEnter, onMouseLeave, onMouseOver, onMouseOut, onMouseDown, onMouseUp, onKeyPress, onKeyDown, onKeyUp, onFocus, onBlur, onScroll, onResize, onCopy, onCut, onPaste, onDrag, onDragStart
  * children : string, number, element
  * element2 = (<div>
- * <span>Hello</span> <spna>World</span>
+ * <span>Hello</span> <span>World</span>
  * </div>)
  * element2 = React.createElement('div', {
  * children: [
@@ -30,25 +24,24 @@ import Game from "./components/tictactoe/Game";
  */
 
 // tạo 1 component có tên là Feature
-function Feature() {
-  return (
-    <div className="Feature">
-      <img src="" alt="" className="feature-image" />
-      <h3 className="feature-title">Ảnh</h3>
-      <p className="feature-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-        sequi voluptatum officia, cupiditate delectus autem commodi! Quaerat
-        cupiditate nesciunt rerum facilis, excepturi impedit aliquid laboriosam
-        quis obcaecati eos corporis dolorem?
-      </p>
-    </div>
-  );
-}
+// function Feature() {
+//   return (
+//     <div className="Feature">
+//       <img src="" alt="" className="feature-image" />
+//       <h3 className="feature-title">Ảnh</h3>
+//       <p className="feature-description">
+//         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+//         sequi voluptatum officia, cupiditate delectus autem commodi! Quaerat
+//         cupiditate nesciunt rerum facilis, excepturi impedit aliquid laboriosam
+//         quis obcaecati eos corporis dolorem?
+//       </p>
+//     </div>
+//   );
+// }
 
 
 //parent component
 function App() {
-  const name = "ReactJS";
   return (
     <div>
       {/* chirend component */}
@@ -76,7 +69,15 @@ function App() {
       <Counter></Counter> */}
 
       {/* Game */}
-      <Game></Game> 
+      {/* <Game></Game>  */}
+
+      {/* Button */}
+      {/* <Button>Primary</Button> 
+      <Button className="button--secondary">secondary</Button>  */}
+      {/* <Card></Card> */}
+      {/* <div className="text-center text-lg">
+      </div> */}
+      <Photos></Photos>
     </div>
   );
 }
